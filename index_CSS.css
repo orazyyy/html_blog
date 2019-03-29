@@ -1,0 +1,50 @@
+#index_h1 {
+    color: #87CEEB;
+    font-family: "Microsoft Himalaya";
+
+}
+
+div#navigator{
+    height: 48px;
+    width: 1210px;
+    margin: 0 0 0 12px;
+    padding: 0px;
+    border: 0px;
+    background: greenyellow;
+}
+
+div#navigator ul#menu{
+    height: 48px;
+    width: 1201px;
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+div#navigator ul#menu li{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    position: absolute;
+    top: 0px;
+}
+
+ul#menu li,ul#menu a
+{
+    display: block;
+    height: 48px;
+    border-bottom:0;
+}
+
+div#navfirst ul#menu li a
+{
+    text-indent: -9999px;
+    overflow:hidden;
+    text-decoration: none;
+}
+
+#b	{left:0;width:155px;}
+#f	{left:155px;width:157px;}
+#p		{left:312px;width:167px;}
+#c 	{left:479px;width:158px;}
