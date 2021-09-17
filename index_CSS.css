@@ -1,42 +1,50 @@
 #index_h1 {
     color: #87CEEB;
-    font-family: "Microsoft Himalaya";
-
+    /*font-family: "Microsoft Himalaya";*/
+    text-align: center;
 }
 
 div#navigator{
-    height: 48px;
-    width: 1210px;
-    margin: 0 0 0 12px;
-    padding: 0px;
-    border: 0px;
+    height: 2em;
+    width: 484px;
+    line-height: 2em;
+    margin: 0 auto;
+    padding: 0;
+    /*border: 10px;*/
     background: greenyellow;
 }
 
 div#navigator ul#menu{
-    height: 48px;
-    width: 1201px;
+    float: left;
+    width: 100%;
     background: transparent;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
+    margin: 0;
+    padding: 0;
+
+    /*position: relative;*/
 }
 
 div#navigator ul#menu li{
+    display: inline;
+    /*
     margin: 0px;
     padding: 0px;
     list-style: none;
     position: absolute;
-    top: 0px;
+    top: 12px;
+*/
 }
 
-ul#menu li,ul#menu a
-{
-    display: block;
-    height: 48px;
+ul#menu li,ul#menu a {
+    float: left;
+    text-align: center;
+    width: 120px;
+
+
+    border-right:1px solid white;
     border-bottom:0;
 }
-
+/*
 div#navfirst ul#menu li a
 {
     text-indent: -9999px;
@@ -46,5 +54,5 @@ div#navfirst ul#menu li a
 
 #b	{left:0;width:155px;}
 #f	{left:155px;width:157px;}
-#p		{left:312px;width:167px;}
-#c 	{left:479px;width:158px;}
+#p	{left:312px;width:167px;}
+#c 	{left:479px;width:158px;}*/
