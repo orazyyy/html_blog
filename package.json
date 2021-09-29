@@ -1,0 +1,26 @@
+{
+  "name": "html_blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index_js.js",
+  "scripts": {
+    "dev": "nodemon index_js.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orazyyy/html_blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orazyyy/html_blog/issues"
+  },
+  "homepage": "https://github.com/orazyyy/html_blog#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
