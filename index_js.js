@@ -1,18 +1,25 @@
 //创建服务器
 //加载http核心模块
-const http = require('http');
+const koa = require('koa');
+const router = require('koa-router')();
+const koaStatic = require('koa-static');
 let fs = require('fs');
-//创建web服务器
+const path = require('path');
+const app = new koa();
+
+
+/*
+创建web服务器
 const server = http.createServer();
 server.on('request', (req, res)=>{
-    /** 
+    
      res.setHeader('Content-Type', 'application/json');
     const responseData = {
         name: 'Yang',
         uni: 'hhu'
     }
 
-    res.end(JSON.stringify(responseData));*/
+    res.end(JSON.stringify(responseData));
     let url = req.url;
     if (url==='/') {
         
@@ -27,7 +34,7 @@ server.on('request', (req, res)=>{
                 res.end(data);
             }
         });
-        //res.end('index page');
+        res.end('index page');
     }else if(url ==='/login'){
         res.end('login page');
     }else{
@@ -36,10 +43,32 @@ server.on('request', (req, res)=>{
 
     
 });
+*/
+//static resources like css-sheets
+app.use(koaStatic('./'));
 
-const PORT = 5000;
-
-
-server.listen(PORT, function (){
-    console.log('server running at port 5000...');
+app.use(async (ctx, next) => {
+    console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
+    await next();
 });
+
+router.get('/', async (ctx, next) => {
+    ctx.response.type = 'html';
+    ctx.response.body = fs.createReadStream('./index.html');
+});
+
+router.get('/my_blogs.html', async (ctx, next) => {
+    //var name = ctx.params.name;
+    ctx.response.type = 'html';
+    ctx.response.body = fs.createReadStream('./my_blogs.html');
+});
+router.get('/my_photos.html', async (ctx, next) => {
+    //var name = ctx.params.name;
+    ctx.response.type = 'html';
+    ctx.response.body = fs.createReadStream('./my_photos.html');
+});
+
+
+app.use(router.routes());
+app.listen(5000);
+console.log('server running at port 5000...');
