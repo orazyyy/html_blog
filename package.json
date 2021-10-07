@@ -2,9 +2,9 @@
   "name": "html_blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index_js.js",
+  "main": "app.js",
   "scripts": {
-    "dev": "nodemon index_js.js"
+    "dev": "nodemon --harmony ./server/app.js"
   },
   "repository": {
     "type": "git",

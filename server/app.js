@@ -45,7 +45,7 @@ server.on('request', (req, res)=>{
 });
 */
 //static resources like css-sheets
-app.use(koaStatic('./'));
+app.use(koaStatic('./static'));
 
 app.use(async (ctx, next) => {
     console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
@@ -54,21 +54,21 @@ app.use(async (ctx, next) => {
 
 router.get('/', async (ctx, next) => {
     ctx.response.type = 'html';
-    ctx.response.body = fs.createReadStream('./index.html');
+    ctx.response.body = fs.createReadStream('./static/index.html');
 });
 
 router.get('/my_blogs.html', async (ctx, next) => {
     //var name = ctx.params.name;
     ctx.response.type = 'html';
-    ctx.response.body = fs.createReadStream('./my_blogs.html');
+    ctx.response.body = fs.createReadStream('./static/my_blogs.html');
 });
 router.get('/my_photos.html', async (ctx, next) => {
     //var name = ctx.params.name;
     ctx.response.type = 'html';
-    ctx.response.body = fs.createReadStream('./my_photos.html');
+    ctx.response.body = fs.createReadStream('./static/my_photos.html');
 });
 
 
 app.use(router.routes());
-app.listen(5000);
-console.log('server running at port 5000...');
+app.listen(3001);
+console.log('server running at port 3001...');
